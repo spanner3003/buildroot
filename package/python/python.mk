@@ -54,6 +54,9 @@ PYTHON_DEPENDENCIES = host-python libffi
 
 HOST_PYTHON_DEPENDENCIES = host-expat host-zlib
 
+# Module _ssl needs openssl
+HOST_PYTHON_DEPENDENCIES += host-openssl
+
 PYTHON_INSTALL_STAGING = YES
 
 ifeq ($(BR2_PACKAGE_PYTHON_READLINE),y)
