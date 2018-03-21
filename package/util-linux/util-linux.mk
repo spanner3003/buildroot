@@ -122,6 +122,9 @@ HOST_UTIL_LINUX_CONF_OPTS += \
 	--disable-libblkid --disable-libmount \
 	--without-ncurses
 
+HOST_UTIL_LINUX_CONF_OPTS += \
+	$(if $(BR2_PACKAGE_UTIL_LINUX_SETPRIV),--enable-setpriv,--disable-setpriv) \
+
 ifeq ($(BR2_PACKAGE_HOST_UTIL_LINUX),y)
 HOST_UTIL_LINUX_CONF_OPTS += --disable-makeinstall-chown
 # disable more command because of ncurses dependency
